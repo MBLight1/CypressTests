@@ -24,7 +24,7 @@ describe('Main cases', () => {
         .should('contain', 200)
     })
 
-    it.only("Verification of the outflow of money from the user", () => {
+    it("Verification of the outflow of money from the user", () => {
       cy.contains(text.customerLogin).click()
       cy.userOption(2).contains('Harry Potter')
       cy.get(selector.buttonLogin).type('submit').click()
@@ -58,15 +58,9 @@ describe('Main cases', () => {
       cy.addAppointment(appointment)
       cy.findByNgClass('btnClass3').click()
       cy.get(selector.trRow)
-      .last()
-      .should('contain', "Marcelo")
-
+        .last()
+        .should('contain', "Marcelo")
 
     })
-    // it('currency settings for each user account', () => {
-    //   cy.contains(text.bankManagerLogin).click()
-    //   cy.findByNgClass('btnClass2').click()
-
-    // })
   })
 })
